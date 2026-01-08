@@ -291,6 +291,7 @@
           </div>
           <div class="contact-form">
             <h3>Send a Message</h3>
+            <br />
             <form>
               <input type="text" placeholder="Your Name" required />
               <input type="email" placeholder="Your Email" required />
@@ -356,7 +357,13 @@
           </div>
         </div>
         <div class="copyright">
-          <p>&copy; 2025 Avishek Ghimire. All rights reserved.</p>
+          <p>&copy; 2026 Avishek Ghimire. All rights reserved.</p>
+          <p>
+            Designed by
+            <a href="https://www.anujghimire.com.np/" target="_blank"
+              >Anuj Ghimire</a
+            >
+          </p>
         </div>
       </div>
     </footer>
@@ -400,6 +407,20 @@
             mainNav.classList.remove("active");
             mobileMenu.textContent = "☰";
           }
+        });
+      });
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = link.getAttribute("href").substring(1);
+
+          if (target) {
+            document
+              .getElementById(target)
+              ?.scrollIntoView({ behavior: "smooth" });
+          }
+
+          history.replaceState(null, "", window.location.pathname);
         });
       });
     </script>
